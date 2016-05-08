@@ -1,0 +1,6 @@
+alias toIdeaProjects='cd /home/javielinux/IdeaProjects'
+alias to9Cards='cd /home/javielinux/IdeaProjects/nine-cards-v2'
+alias to9CardsBackend='cd /home/javielinux/IdeaProjects/nine-cards-backend'
+alias toSpark='cd /home/javielinux/Documents/Applications/spark-1.6.1-bin-hadoop2.6' 
+alias spark='/home/javielinux/Documents/Applications/spark-1.6.1-bin-hadoop2.6/bin/spark-shell' 
+alias toSpark='/home/javielinux/IdeaProjects/spark' 
