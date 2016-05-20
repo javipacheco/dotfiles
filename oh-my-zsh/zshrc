@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/javielinux/.oh-my-zsh
 
-export SPARK_HOME=/home/javielinux/Documents/Applications/spark-1.6.1-bin-hadoop2.6
+export SPARK_HOME=/home/javielinux/Dev/spark-1.6.1-bin-hadoop2.6
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,7 +55,7 @@ plugins=(git adb scala sbt alias dont-share)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/javielinux/Documents/Applications/android-sdk-linux/tools:/home/javielinux/Documents/Applications/android-sdk-linux/platform-tools:$SPARK_HOME/bin"
+  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/javielinux/Documents/Applications/android-sdk-linux/tools:/home/javielinux/Dev/android/platform-tools:$SPARK_HOME/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
