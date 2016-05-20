@@ -57,7 +57,7 @@ plugins=(git adb scala sbt alias dont-share)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/javielinux/Documents/Applications/android-sdk-linux/tools:/home/javielinux/Dev/android/platform-tools:$SPARK_HOME/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$SPARK_HOME/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
