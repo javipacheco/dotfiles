@@ -3,6 +3,8 @@
 
 export SPARK_HOME=/home/javielinux/Dev/spark-1.6.1-bin-hadoop2.6
 
+export ANDROID_HOME=/home/javielinux/Dev/android
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
