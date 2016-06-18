@@ -41,7 +41,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "35" -bw 0 -bc "$bg_color" -bg "$bg_color" -fg "$text_color"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 100 -opacity "35" -bw 0 -bc "$bg_color" -bg "$bg_color" -fg "$text_color"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -51,9 +51,6 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opaci
 bindcode 121 exec amixer -D pulse sset Master toggle
 bindcode 122 exec amixer -D pulse sset Master 5%-
 bindcode 123 exec amixer -D pulse sset Master 5%+
-
-#quick exit
-bindcode 169 exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # change focus
 bindsym $mod+j focus left
@@ -137,8 +134,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+N exec nautilus --no-desktop
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -163,6 +160,18 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+set $mode_system System (l) lock, (e) logout, (r) reboot, (s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock -c 2f343f, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
 
 bindsym $mod+r mode "resize"
 
@@ -211,6 +220,6 @@ bar {
 	position top
 }
 
-exec_always feh --bg-scale /home/javielinux/Pictures/dual-display-wallpapers-3.jpg
+exec_always xset -dpms s off
 
 exec --no-startup-id nm-applet
